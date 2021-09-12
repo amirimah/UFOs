@@ -45,7 +45,6 @@ function updateFilters() {
       delete filters[filterId];
     }
     // 6. Call function to apply all filters and rebuild the table
-    console.log(filters);
     filterTable();
   
   }
@@ -58,11 +57,8 @@ function updateFilters() {
   
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
-    //console.log(Object.entries(filters));
-    Object.entries(filters).forEach(([key, value])=>{
-    //  console.log(value);
-    //  console.log(key);
-      filteredData = filteredData.filter(row => row[key] === value);
+    
+    Object.values(filteredData).forEach((filter)=>{filteredData = filteredData.filter(row => row.filter === tableData);
 
 
     });
